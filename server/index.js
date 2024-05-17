@@ -12,7 +12,7 @@ app.use('/customerValidation',login);
 app.use('/saveCustomerData',saveCard);
 
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb+srv://rushirachapalli:Harigowri%40123@shopifydb.qqkh4x7.mongodb.net/")
         .then(()=>console.log('connected to database'))
         .catch((error)=>console.error(error));
 
