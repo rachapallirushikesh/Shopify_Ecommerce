@@ -41,7 +41,7 @@ export default function Register(){
         }
        
         
-        axios.post(process.env.customerData,{email,number,player,password})
+        axios.post("https://shopify-ecommerce-ftg8.onrender.com/customerData",{email,number,player,password})
              .then(res=>navigate('/login'))
              .catch(()=>console.log('Server error'));
        

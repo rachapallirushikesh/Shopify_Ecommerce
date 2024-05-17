@@ -29,7 +29,7 @@ export default function Auth(){
 
     // const [token,setToken] = React.useState(null);
     function handleClick(){
-        const result = axios.post(process.env.customerValidation,{email,password})
+        const result = axios.post("https://shopify-ecommerce-ftg8.onrender.com/customerValidation",{email,password})
         .then(res=> {
             // setToken(res.data.tokenHash)
             console.log(res.data.token);
