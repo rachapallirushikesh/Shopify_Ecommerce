@@ -52,7 +52,7 @@ export default function Nav(){
                 {localStorage.getItem('x-token')?<div style={{border:"2px solid black"}}><Link to='/' onClick={handleLogout} style={{textDecoration:"none",color:"black"}}>logout</Link></div>:
                 <div style={{border:"2px solid black"}}><Link to='/Login' onClick={handleLogin} style={{textDecoration:"none",color:"black"}}>login</Link></div>}
                 <img alt='logo' src={traly} onClick={handleCart}/>
-                <p>{log? 0 : cartNumber}</p>
+                <p>{!log? 0 : cartNumber}</p>
             </div>
         </div>
     );

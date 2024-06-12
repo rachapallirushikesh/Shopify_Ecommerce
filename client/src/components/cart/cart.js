@@ -78,7 +78,7 @@ export default function Cart(){
                         return <DesignCart key={data.key} itemKey={data.key} img={data.img} name={data.name} price={data.new_price} />
                     })}
                     <div style={{marginTop:'2rem'}}>
-                    {proceed ?
+                    {!proceed ?
                     <button onClick={handleOrder} 
                     style={{backgroundColor:'red',color:'white',border:'2px solid red',padding:'10px 20px'}}>Proceed to Checkout</button>
                     
