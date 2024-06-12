@@ -18,7 +18,7 @@ export default function Products(){
 
     function handleOnClick(){
         try{
-            axios.post('http://localhost:7000/saveCustomerData',{
+            axios.post("https://shopify-ecommerce-ftg8.onrender.com/saveCustomerData",{
             key:productId,
             name:answer.name,
             img:answer.image,
