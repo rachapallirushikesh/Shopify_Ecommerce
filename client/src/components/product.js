@@ -8,7 +8,7 @@ import axios from 'axios';
 import { store } from "./context/userContext";
 
 export default function Products(){
-    const {cartNumber,setCartNumber} = useContext(store);
+    const {cartNumber,setCartNumber,cartData,setCartData,setLog} = useContext(store);
     // const navigate = useNavigate();
     const { id } = useParams();
     const productId = Number(id); // Ensure id is converted to a number
@@ -18,7 +18,7 @@ export default function Products(){
 
     function handleOnClick(){
         try{
-            axios.post("https://shopify-ecommerce-ftg8.onrender.com/saveCustomerData",{
+            axios.post('http://localhost:7000/saveCustomerData',{
             key:productId,
             name:answer.name,
             img:answer.image,
@@ -31,7 +31,17 @@ export default function Products(){
             .then((res)=>{
                 alert(res.data.message);
                 if(res.data.bool){
+                    const productData = {
+                        key:productId,
+                        img:answer.image,
+                        name:answer.name,
+                        new_price:answer.new_price,
+                        category:answer.category
+                    }
+                    setCartData([...cartData,productData]);
                     setCartNumber(cartNumber+1);
+                    setLog(true);
+
                     console.log('succesfully saved');
                 }
             })
