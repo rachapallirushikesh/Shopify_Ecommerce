@@ -18,31 +18,6 @@ export default function Nav(){
     const [tokenExists, setTokenExists] = useState(!!localStorage.getItem('x-token'));
 
 
-    useEffect(() => {
-        let timeout;
-
-        function handleActivity() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                localStorage.removeItem('x-token');
-                setLog(false);
-                setTokenExists(false);
-                navigate('/shop'); // Optionally, redirect to shop after logout
-            }, 10 * 60 * 1000); // 10 minutes in milliseconds
-        }
-
-        handleActivity(); // Initialize timeout on component mount
-
-        window.addEventListener('mousemove', handleActivity);
-        window.addEventListener('mousedown', handleActivity);
-        window.addEventListener('keypress', handleActivity);
-
-        return () => {
-            window.removeEventListener('mousemove', handleActivity);
-            window.removeEventListener('mousedown', handleActivity);
-            window.removeEventListener('keypress', handleActivity);
-        };
-    }, []);
 
     function handleLogin(){
         navigate('/login');
@@ -56,7 +31,7 @@ export default function Nav(){
     }
 
     function handleCart(){
-        
+        navigate('/cart');
     }
 
     return (

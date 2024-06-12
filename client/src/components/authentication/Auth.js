@@ -4,7 +4,7 @@ import './auth.css';
 import axios from 'axios';
 
 
-import { store } from './context/userContext';
+import { store } from '../context/userContext';
 export default function Auth(){
     
     const {setLog} = useContext(store);
