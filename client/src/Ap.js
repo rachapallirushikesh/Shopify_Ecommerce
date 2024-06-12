@@ -24,8 +24,6 @@ export default function Ap(){
                 <Route path='/Register' element={<><Nav /><Register /></>} />
                 <Route path='/Product/:id' element={<><Nav /><Products /></>} />
                 <Route path='/cart' element={<><Nav /><Cart /></>} />
-                {/* Add a default route for unmatched paths */}
-                {/* <Route path='*' element={<NotFound />} /> */}
             </Routes>
         </UserContextProvider>
         
